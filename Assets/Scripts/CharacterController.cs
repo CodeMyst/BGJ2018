@@ -31,7 +31,7 @@ namespace BGJ2018
             if (rb.velocity.magnitude != 0 && Mathf.Abs (input.x) >= rotationDeadzone || Mathf.Abs (input.z) >= rotationDeadzone)
             {
                 Quaternion lookRotation = Quaternion.LookRotation (rb.velocity.normalized);
-                transform.rotation = Quaternion.Lerp (transform.rotation, lookRotation, Time.time * rotationSpeed);
+                transform.rotation = Quaternion.Lerp (transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
             }
         }
 
