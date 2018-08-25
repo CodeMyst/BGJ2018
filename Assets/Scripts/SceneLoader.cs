@@ -92,7 +92,6 @@ public class SceneLoader : MonoBehaviour, ISceneLoader
     {
         if (Instance != null)
         {
-            Debug.LogWarning($"You have duplicate SceneLoaders in your game. Destroying {name}.");
             Destroy(gameObject);
             return;
         }
