@@ -57,7 +57,7 @@ public class SceneLoader : MonoBehaviour, ISceneLoader
 
     public void LoadScene(int sceneIndex)
     {
-        if (ongoingCoroutine != null) StopCoroutine(ongoingCoroutine);
+        if (ongoingCoroutine != null) return;
 
         ongoingCoroutine = LoadSceneWithAnim(sceneIndex);
         StartCoroutine(ongoingCoroutine);
@@ -65,7 +65,7 @@ public class SceneLoader : MonoBehaviour, ISceneLoader
 
     public void LoadNextScene()
     {
-        if (ongoingCoroutine != null) StopCoroutine(ongoingCoroutine);
+        if (ongoingCoroutine != null) return;
 
         ongoingCoroutine = LoadSceneWithAnim(SceneManager.GetActiveScene().buildIndex + 1);
         StartCoroutine(ongoingCoroutine);
@@ -73,7 +73,7 @@ public class SceneLoader : MonoBehaviour, ISceneLoader
 
     public void ReloadActiveScene()
     {
-        if (ongoingCoroutine != null) StopCoroutine(ongoingCoroutine);
+        if (ongoingCoroutine != null) return;
 
         ongoingCoroutine = LoadSceneWithAnim(SceneManager.GetActiveScene().buildIndex);
         StartCoroutine(ongoingCoroutine);
