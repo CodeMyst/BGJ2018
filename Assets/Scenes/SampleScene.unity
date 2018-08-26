@@ -263,7 +263,7 @@ GameObject:
   m_Layer: 0
   m_Name: Light Gun
   m_TagString: Untagged
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -525,9 +525,9 @@ LineRenderer:
     numCapVertices: 0
     alignment: 0
     textureMode: 0
-    generateLightingData: 0
+    generateLightingData: 1
   m_UseWorldSpace: 0
-  m_Loop: 1
+  m_Loop: 0
 --- !u!1 &770721229
 GameObject:
   m_ObjectHideFlags: 0
