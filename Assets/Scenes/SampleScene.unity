@@ -396,6 +396,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac92cfcd5939abb4ea0dd801db8f82fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firePoint: {fileID: 0}
+  aimGuide: {fileID: 0}
+  aimGuideMaterial: {fileID: 0}
+  aimGuideMaterialOn: {fileID: 0}
 --- !u!1 &662222414
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,7 +720,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &815264054
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -824,7 +828,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400010, guid: 2e7118da96639344793bc29f87ea0d77, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.03
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 2e7118da96639344793bc29f87ea0d77, type: 3}
       propertyPath: m_LocalPosition.y
@@ -832,7 +836,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 2e7118da96639344793bc29f87ea0d77, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2.27
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 2e7118da96639344793bc29f87ea0d77, type: 3}
       propertyPath: m_LocalRotation.x
@@ -869,6 +873,40 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e7118da96639344793bc29f87ea0d77, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1444191055 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100010, guid: 2e7118da96639344793bc29f87ea0d77, type: 3}
+  m_PrefabInternal: {fileID: 1444191054}
+--- !u!114 &1444191056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1444191055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7b38958b5933264b9a7194edc14c5ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  rotationSpeed: 10
+  volume: 50
+  hearingRange: 15
+--- !u!54 &1444191057
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1444191055}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1 &1508677148
 GameObject:
   m_ObjectHideFlags: 0
