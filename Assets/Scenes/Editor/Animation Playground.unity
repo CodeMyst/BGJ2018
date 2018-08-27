@@ -241,7 +241,7 @@ MonoBehaviour:
   offMaterial: {fileID: 2100000, guid: e3105a446d614bb40ab0014ee4ba7e8c, type: 2}
   onMaterial: {fileID: 2100000, guid: 9f8c572c3f9aec143af6cb921c137973, type: 2}
   light: {fileID: 1918379927}
-  materialColor: {r: 0, g: 0, b: 0, a: 0}
+  materialColor: {r: 0, g: 0.2235, b: 0.7490196, a: 1}
   illuminatable: {fileID: 1918379926}
   maxLightIntensity: 3.5
   OnIlluminated:
