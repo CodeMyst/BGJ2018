@@ -55,7 +55,7 @@ namespace BGJ2018
             if (Physics.Raycast (r, out hit))
             {
                 IlluminatableObject i = hit.transform.gameObject.GetComponent<IlluminatableObject> ();
-                if (i != null)
+                if (i != null && Vector3.Angle(transform.forward, lookDirection) < 1)
                 {
                     aimGuide.material = aimGuideMaterialOn; 
 

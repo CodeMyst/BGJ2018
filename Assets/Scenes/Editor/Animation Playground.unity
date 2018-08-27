@@ -156,8 +156,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &104607129 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4498168184376724, guid: 98bbed49389542a4f9777bbf9eed7e88,
+    type: 2}
+  m_PrefabInternal: {fileID: 232129856}
 --- !u!1001 &232129856
 Prefab:
   m_ObjectHideFlags: 0
@@ -195,7 +200,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4498168184376724, guid: 98bbed49389542a4f9777bbf9eed7e88, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4762527484374644, guid: 98bbed49389542a4f9777bbf9eed7e88, type: 2}
       propertyPath: m_LocalPosition.z
@@ -236,11 +241,15 @@ MonoBehaviour:
   offMaterial: {fileID: 2100000, guid: e3105a446d614bb40ab0014ee4ba7e8c, type: 2}
   onMaterial: {fileID: 2100000, guid: 9f8c572c3f9aec143af6cb921c137973, type: 2}
   light: {fileID: 1918379927}
+  materialColor: {r: 0, g: 0, b: 0, a: 0}
+  illuminatable: {fileID: 1918379926}
+  maxLightIntensity: 3.5
   OnIlluminated:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  energyRequired: 20
 --- !u!65 &244382770
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -251,8 +260,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.52415895, y: 2.2384222, z: 0.4258747}
-  m_Center: {x: 0.02480483, y: 0.6192111, z: -0.008939743}
+  m_Size: {x: 0.52415895, y: 1.6981885, z: 0.4258747}
+  m_Center: {x: 0.02480483, y: 0.8893279, z: -0.008939743}
 --- !u!4 &244382771
 Transform:
   m_ObjectHideFlags: 0
@@ -266,7 +275,7 @@ Transform:
   - {fileID: 2063692342}
   - {fileID: 1918379929}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &258294786
 GameObject:
@@ -331,8 +340,51 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: 210, z: 0}
+--- !u!1 &546393824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 546393826}
+  - component: {fileID: 546393825}
+  m_Layer: 0
+  m_Name: CameraMover
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &546393825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 546393824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf74ad847355744da952546241c6a37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 104607129}
+  SmoothTime: 0
+--- !u!4 &546393826
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 546393824}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1193766992}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1193766988
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,11 +460,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1193766988}
-  m_LocalRotation: {x: 0.53729963, y: 0, z: 0, w: 0.8433915}
+  m_LocalRotation: {x: 0.53729963, y: -0, z: -0, w: 0.8433915}
   m_LocalPosition: {x: 0, y: 12, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 546393826}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 65, y: 0, z: 0}
 --- !u!114 &1193766993
@@ -558,7 +610,7 @@ Transform:
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1918379926
 GameObject:
