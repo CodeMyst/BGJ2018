@@ -75,6 +75,8 @@ public class SceneLoader : MonoBehaviour, ISceneLoader
     {
         if (ongoingCoroutine != null) return;
 
+        if (SceneManager.GetActiveScene().buildIndex == 0) return; // Don't reload in main menu
+
         ongoingCoroutine = LoadSceneWithAnim(SceneManager.GetActiveScene().buildIndex);
         StartCoroutine(ongoingCoroutine);
     }
