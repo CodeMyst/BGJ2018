@@ -71,8 +71,8 @@ ModelImporter:
     400064: Spine3
     2100000: Character
     4300000: Rigged
-    7400000: Armature|Idle
-    7400002: Armature|Walking
+    7400000: Idle
+    7400002: Walking
     9500000: //RootNode
     13700000: Rigged
     2186277476908879412: ImportLogs
@@ -105,7 +105,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Idle
+      name: Idle
       takeName: Armature|Idle
       firstFrame: 0
       lastFrame: 60
@@ -133,7 +133,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Walking
+      name: Walking
       takeName: Armature|Walking
       firstFrame: 0
       lastFrame: 40
