@@ -400,6 +400,8 @@ MonoBehaviour:
   aimGuide: {fileID: 753189339}
   aimGuideMaterial: {fileID: 2100000, guid: 5a7041733f427aa45a94ba7caecade96, type: 2}
   aimGuideMaterialOn: {fileID: 2100000, guid: 0c595ab3de3fe464cac4506c609b0060, type: 2}
+  maxEnergy: 100
+  energy: 0
 --- !u!1 &662222414
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,11 +802,15 @@ MonoBehaviour:
   offMaterial: {fileID: 2100000, guid: e3105a446d614bb40ab0014ee4ba7e8c, type: 2}
   onMaterial: {fileID: 2100000, guid: 9f8c572c3f9aec143af6cb921c137973, type: 2}
   light: {fileID: 1605422615}
+  materialColor: {r: 0, g: 0.22352941, b: 0.7490196, a: 1}
+  illuminatable: {fileID: 1605422613}
+  maxLightIntensity: 3.5
   OnIlluminated:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  energyRequired: 20
 --- !u!1 &1096879250
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,7 +1011,7 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0, g: 0.6233463, b: 1, a: 1}
-  m_Intensity: 2.68
+  m_Intensity: 0
   m_Range: 4.19
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -1026,7 +1032,7 @@ Light:
     m_Bits: 4294967295
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 2.07
+  m_BounceIntensity: 2
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0

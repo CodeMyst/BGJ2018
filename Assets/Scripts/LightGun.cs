@@ -1,6 +1,7 @@
 using UnityEngine;
 
 using BGJ2018.Helpers;
+using System.Collections;
 
 namespace BGJ2018
 {
@@ -15,8 +16,19 @@ namespace BGJ2018
         private Material aimGuideMaterial;
         [SerializeField]
         private Material aimGuideMaterialOn;
+        [SerializeField]
+        private float fireRate = 0.25f;
 
         private Vector3 lookDirection;
+
+        [SerializeField]
+        private float maxEnergy = 100f;
+        private float energy;
+
+        private void Start ()
+        {
+            energy = maxEnergy;
+        }
 
         private void Update ()
         {
@@ -47,7 +59,7 @@ namespace BGJ2018
                     aimGuide.material = aimGuideMaterialOn; 
 
                     if (Input.GetMouseButtonDown (0))
-                        ShootAtIlluminatable (i);
+                        StartCoroutine (ShootAtIlluminatable (i, 5f));
                 }
                 else
                     aimGuide.material = aimGuideMaterial;
@@ -59,9 +71,17 @@ namespace BGJ2018
             }
         }
 
-        private void ShootAtIlluminatable (IlluminatableObject i)
+        private IEnumerator ShootAtIlluminatable (IlluminatableObject i, float amountOfEnergy)
         {
-            i.Illuminate ();
+            if (energy <= 0 || i.MaxEnergy) yield break;
+            float energyAdded = 0;
+            do
+            {
+                energy -= fireRate;
+                i.AddEnergy (fireRate);
+                energy += fireRate;
+                yield return new WaitForEndOfFrame ();
+            } while (energyAdded < amountOfEnergy && Input.GetMouseButton (0));
         }
     }
 }

@@ -13,26 +13,49 @@ namespace BGJ2018
         private Material onMaterial;
         [SerializeField]
         private new Light light;
+        [SerializeField]
+        private Color materialColor;
+
+        [SerializeField]
+        private GameObject illuminatable;
+        private Renderer r;
+
+        [SerializeField]
+        private float maxLightIntensity = 3.5f;
 
         public bool Illuminated { get; protected set; }
 
         public UnityEvent OnIlluminated;
 
-        public void Illuminate ()
+        [SerializeField]
+        private float energyRequired = 20;
+        public float EnergyRequired => energyRequired;
+        private float energy;
+
+        public bool MaxEnergy => energy == energyRequired;
+
+        private void Start ()
+            => r = illuminatable.GetComponent<Renderer> ();
+
+        public void AddEnergy (float energy)
         {
-            if (Illuminated) return;
-            meshRenderer.material = onMaterial;
-            light.enabled = true;
-            Illuminated = true;
-            OnIlluminated.Invoke ();
+            this.energy += energy;
+            if (Illuminated == false && energy > 0f)
+            {
+                light.enabled = true;
+                meshRenderer.material = onMaterial;
+                Illuminated = true;
+            }
+            UpdateLight ();
         }
 
-        public void DeIlluminate ()
+        private void UpdateLight ()
         {
-            if (!Illuminated) return;
-            meshRenderer.material = offMaterial;
-            light.enabled = false;
-            Illuminated = false;
+            float percentLit = (energy / energyRequired) * 100f;
+            if (percentLit >= 125) return;
+            float intensity = (maxLightIntensity * percentLit) / 100f;
+            r.material.SetColor ("_EmissionColor", materialColor * intensity * 3.5f);
+            light.intensity = intensity;
         }
     }
 }
