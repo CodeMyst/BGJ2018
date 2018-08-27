@@ -16,18 +16,21 @@ namespace BGJ2018
         private const float RotationDeadzone = 0.2f;
 
         private Rigidbody rb;
+        private Animator anim;
 
         private Vector3 input;
 
         private void Start()
         {
             rb = GetComponent<Rigidbody>();
+            anim = GetComponentInChildren<Animator>();
         }
 
         private void Update()
         {
             HandleInput();
             Turn();
+            Animate();
         }
 
         private void Turn()
@@ -57,6 +60,11 @@ namespace BGJ2018
         private void Move()
         {
             rb.velocity = input * speed;
+        }
+
+        private void Animate()
+        {
+            anim.SetBool("Walking", input.sqrMagnitude > Vector3.kEpsilon);
         }
     }
 }

@@ -51,6 +51,7 @@ namespace BGJ2018
         {
             RaycastHit hit;
             Ray r = new Ray (firePoint.position, lookDirection.normalized);
+            Debug.DrawRay(r.origin, r.direction * 100);
             if (Physics.Raycast (r, out hit))
             {
                 IlluminatableObject i = hit.transform.gameObject.GetComponent<IlluminatableObject> ();
