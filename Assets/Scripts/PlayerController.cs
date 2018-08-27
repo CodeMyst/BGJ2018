@@ -64,7 +64,7 @@ namespace BGJ2018
 
         private void Animate()
         {
-            anim.SetBool("Walking", input.sqrMagnitude > Vector3.kEpsilon);
+            anim?.SetBool("Walking", input.sqrMagnitude > Vector3.kEpsilon);
         }
     }
 }

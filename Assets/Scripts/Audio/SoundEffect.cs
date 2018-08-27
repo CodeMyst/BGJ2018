@@ -34,12 +34,13 @@ namespace BGJ2018.Audio
             audioSource.volume = 0;
         }
 
-        internal void PlayNewClip(SoundEffectInfo soundEffect)
+        internal void PlayNewClip(SoundEffectInfo soundEffect, bool randomizePitch = false)
         {
             if (soundEffect == null) return;
 
             currentSoundEffect = soundEffect;
             audioSource.clip = currentSoundEffect.Clip;
+            audioSource.pitch = randomizePitch ? Random.Range(0.975f, 1.025f) : 1;
             audioSource.Play();
         }
 

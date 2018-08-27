@@ -10,11 +10,6 @@ namespace BGJ2018.Audio
         [SerializeField] private GameObject soundEffectPrefab3D;
         [SerializeField] private List<SoundEffectInfo> soundEffects;
 
-        private void Start()
-        {
-            //InstantiateSoundEffect3D("boom");
-        }
-
         public void InstantiateSoundEffect3D(string soundEffectName)
         {
             var clip = soundEffects.FirstOrDefault(x => x.Name == soundEffectName);
@@ -26,11 +21,29 @@ namespace BGJ2018.Audio
                 .PlayNewClip(clip);
         }
 
+        public void InstantiateRandomSoundWithRandomFrequency3D()
+        {
+            var clip = soundEffects[Random.Range(0, soundEffects.Count)];
+
+            Instantiate(soundEffectPrefab3D, clip.SpawnPosition, Quaternion.identity)
+                .GetComponent<SoundEffect>()
+                .PlayNewClip(clip, randomizePitch: true);
+        }
+
         public void InstantiateSoundEffect2D(string soundEffectName)
         {
             Instantiate(soundEffectPrefab2D)
                 .GetComponent<SoundEffect>()
                 .PlayNewClip(soundEffects.FirstOrDefault(x => x.Name == soundEffectName));
+        }
+
+        public void InstantiateRandomSoundWithRandomPitch2D()
+        {
+            var clip = soundEffects[Random.Range(0, soundEffects.Count)];
+
+            Instantiate(soundEffectPrefab2D)
+                .GetComponent<SoundEffect>()
+                .PlayNewClip(clip, randomizePitch: true);
         }
     }
 
