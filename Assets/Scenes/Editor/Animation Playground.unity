@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028384, g: 0.225714, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571358, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -160,7 +160,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &104607129 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 4498168184376724, guid: 98bbed49389542a4f9777bbf9eed7e88,
+  m_PrefabParentObject: {fileID: 4346858514288994, guid: c73118dee14c7644b81373ee778b3a52,
     type: 2}
   m_PrefabInternal: {fileID: 232129856}
 --- !u!1001 &232129856
@@ -170,44 +170,40 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4498168184376724, guid: 98bbed49389542a4f9777bbf9eed7e88, type: 2}
+    - target: {fileID: 4346858514288994, guid: c73118dee14c7644b81373ee778b3a52, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4498168184376724, guid: 98bbed49389542a4f9777bbf9eed7e88, type: 2}
+    - target: {fileID: 4346858514288994, guid: c73118dee14c7644b81373ee778b3a52, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4498168184376724, guid: 98bbed49389542a4f9777bbf9eed7e88, type: 2}
+    - target: {fileID: 4346858514288994, guid: c73118dee14c7644b81373ee778b3a52, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4498168184376724, guid: 98bbed49389542a4f9777bbf9eed7e88, type: 2}
+    - target: {fileID: 4346858514288994, guid: c73118dee14c7644b81373ee778b3a52, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4498168184376724, guid: 98bbed49389542a4f9777bbf9eed7e88, type: 2}
+    - target: {fileID: 4346858514288994, guid: c73118dee14c7644b81373ee778b3a52, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4498168184376724, guid: 98bbed49389542a4f9777bbf9eed7e88, type: 2}
+    - target: {fileID: 4346858514288994, guid: c73118dee14c7644b81373ee778b3a52, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4498168184376724, guid: 98bbed49389542a4f9777bbf9eed7e88, type: 2}
+    - target: {fileID: 4346858514288994, guid: c73118dee14c7644b81373ee778b3a52, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4498168184376724, guid: 98bbed49389542a4f9777bbf9eed7e88, type: 2}
+    - target: {fileID: 4346858514288994, guid: c73118dee14c7644b81373ee778b3a52, type: 2}
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 4762527484374644, guid: 98bbed49389542a4f9777bbf9eed7e88, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 98bbed49389542a4f9777bbf9eed7e88, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: c73118dee14c7644b81373ee778b3a52, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &244382768
 GameObject:
@@ -246,7 +242,18 @@ MonoBehaviour:
   maxLightIntensity: 3.5
   OnIlluminated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1781530498}
+        m_MethodName: InstantiateSoundEffect2D
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: LightbulbDing
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   energyRequired: 20
@@ -611,6 +618,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1781530497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1781530499}
+  - component: {fileID: 1781530498}
+  m_Layer: 0
+  m_Name: Sound Effect Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1781530498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1781530497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23907687485f65643aafc47d54af30a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffectPrefab2D: {fileID: 1841668711546712, guid: d840f53bcc471ac4985a1c519d2a2371,
+    type: 2}
+  soundEffectPrefab3D: {fileID: 1841668711546712, guid: 8b86e6a253a365f459398a429d3fc49f,
+    type: 2}
+  soundEffects:
+  - Name: LightbulbDing
+    Clip: {fileID: 8300000, guid: b4584636940d78b4891163624ac30e8c, type: 3}
+    Volume: 0.5
+    SpawnPosition: {x: 0, y: 0, z: 0}
+--- !u!4 &1781530499
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1781530497}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1918379926
 GameObject:

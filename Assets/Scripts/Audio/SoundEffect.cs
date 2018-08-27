@@ -30,16 +30,18 @@ namespace BGJ2018.Audio
 
         private void Start()
         {
-            range = player.hearingRange;
             audioSource.volume = 0;
+            if (player == null) return;
+            range = player.hearingRange;
         }
 
-        internal void PlayNewClip(SoundEffectInfo soundEffect)
+        internal void PlayNewClip(SoundEffectInfo soundEffect, bool randomizePitch = false)
         {
             if (soundEffect == null) return;
 
             currentSoundEffect = soundEffect;
             audioSource.clip = currentSoundEffect.Clip;
+            audioSource.pitch = randomizePitch ? Random.Range(0.975f, 1.025f) : 1;
             audioSource.Play();
         }
 
@@ -52,7 +54,7 @@ namespace BGJ2018.Audio
         {
             audioSource.volume = soundEffectIs3D
                 ? Get3DVolume()
-                : player.volume / 100;
+                : Get2DVolume();
 
             if (currentSoundEffect != null)
             {
@@ -70,6 +72,11 @@ namespace BGJ2018.Audio
             }
 
             return (1 - distance / range) * (player.volume / 100);
+        }
+
+        private float Get2DVolume()
+        {
+            return player == null ? 0.5f : player.volume / 100;
         }
     }
 }

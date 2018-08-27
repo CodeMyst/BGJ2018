@@ -39,14 +39,27 @@ namespace BGJ2018
 
         public void AddEnergy (float energy)
         {
-            this.energy += energy;
+            IncrementEnergyValue(energy);
             if (Illuminated == false && energy > 0f)
             {
                 light.enabled = true;
                 meshRenderer.material = onMaterial;
                 Illuminated = true;
             }
-            UpdateLight ();
+
+            UpdateLight();
+        }
+
+        private void IncrementEnergyValue(float energyToAdd)
+        {
+            if (energy > energyRequired) return;
+
+            this.energy += energyToAdd;
+
+            if (energy >= energyRequired)
+            {
+                OnIlluminated.Invoke();
+            }
         }
 
         private void UpdateLight ()
