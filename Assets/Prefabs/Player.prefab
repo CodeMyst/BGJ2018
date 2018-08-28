@@ -464,7 +464,7 @@ GameObject:
   - component: {fileID: 54527462699812408}
   - component: {fileID: 136181733081891806}
   m_Layer: 0
-  m_Name: Character
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1358,7 +1358,7 @@ CapsuleCollider:
   m_Radius: 0.24368958
   m_Height: 3.2552989
   m_Direction: 1
-  m_Center: {x: 0, y: 1.6217674, z: 0}
+  m_Center: {x: 0, y: 1.57, z: 0}
 --- !u!137 &137559785698883926
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

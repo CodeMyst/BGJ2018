@@ -5,6 +5,8 @@ namespace BGJ2018
     [RequireComponent (typeof (Rigidbody))]
     public class PlayerController : MonoBehaviour
     {
+        internal Vector3 LatestCheckpoint; // Set by LevelTrigger
+
         [Header("Movement")]
         [SerializeField] private float speed = 12f;
         [SerializeField] private float rotationSpeed = 2;
@@ -24,6 +26,7 @@ namespace BGJ2018
         {
             rb = GetComponent<Rigidbody>();
             anim = GetComponentInChildren<Animator>();
+            LatestCheckpoint = transform.position;
         }
 
         private void Update()
