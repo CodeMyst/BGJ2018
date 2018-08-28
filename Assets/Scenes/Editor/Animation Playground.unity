@@ -282,7 +282,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &182076334
 Transform:
   m_ObjectHideFlags: 0
@@ -465,6 +465,7 @@ GameObject:
   m_Component:
   - component: {fileID: 243608569}
   - component: {fileID: 243608570}
+  - component: {fileID: 243608571}
   m_Layer: 0
   m_Name: CharacterModel
   m_TagString: Untagged
@@ -507,6 +508,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &243608571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 243608568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cedf02d9467a0074699dc87340ef9aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RightHandObject: {fileID: 2040653227}
+  LookObject: {fileID: 2040653227}
 --- !u!1 &244382768
 GameObject:
   m_ObjectHideFlags: 0
@@ -1347,7 +1361,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1394518028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.39, z: 0}
+  m_LocalPosition: {x: -0.21, y: 1.776, z: -0.608}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 419583066}
@@ -1983,6 +1997,10 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!4 &2040653227 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400002, guid: 6eab92a3fb0002143ac8757943cd5032, type: 3}
+  m_PrefabInternal: {fileID: 2098472470}
 --- !u!1 &2058293408
 GameObject:
   m_ObjectHideFlags: 0
@@ -2131,11 +2149,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 6eab92a3fb0002143ac8757943cd5032, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.052
+      value: -0.168
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 6eab92a3fb0002143ac8757943cd5032, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.085
+      value: 1.131
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 6eab92a3fb0002143ac8757943cd5032, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2143,11 +2161,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 6eab92a3fb0002143ac8757943cd5032, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.82405496
+      value: 0.999944
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 6eab92a3fb0002143ac8757943cd5032, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.56650996
+      value: -0.010588629
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 6eab92a3fb0002143ac8757943cd5032, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2155,7 +2173,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 6eab92a3fb0002143ac8757943cd5032, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300002, guid: 6eab92a3fb0002143ac8757943cd5032, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2239,7 +2257,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 6eab92a3fb0002143ac8757943cd5032, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -69.014
+      value: 1.213
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6eab92a3fb0002143ac8757943cd5032, type: 3}
