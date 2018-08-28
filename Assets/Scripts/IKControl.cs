@@ -24,8 +24,8 @@ namespace BGJ2018
 
             if (RightHandObject != null)
             {
-                Animator.SetIKPositionWeight (AvatarIKGoal.RightHand, 1);
-                Animator.SetIKRotationWeight (AvatarIKGoal.RightHand, 1);
+                Animator.SetIKPositionWeight (AvatarIKGoal.RightHand,1);
+                Animator.SetIKRotationWeight (AvatarIKGoal.RightHand,1);
                 Animator.SetIKPosition (AvatarIKGoal.RightHand, RightHandObject.position);
                 Animator.SetIKPosition (AvatarIKGoal.RightHand, RightHandObject.position);
             }
