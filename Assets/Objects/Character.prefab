@@ -1226,6 +1226,8 @@ MonoBehaviour:
   aimGuide: {fileID: 120479359804390548}
   aimGuideMaterial: {fileID: 2100000, guid: 5a7041733f427aa45a94ba7caecade96, type: 2}
   aimGuideMaterialOn: {fileID: 2100000, guid: 0c595ab3de3fe464cac4506c609b0060, type: 2}
+  fireRate: 0.25
+  maxEnergy: 100
 --- !u!120 &120479359804390548
 LineRenderer:
   m_ObjectHideFlags: 1
