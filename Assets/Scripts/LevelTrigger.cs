@@ -17,6 +17,7 @@ namespace BGJ2018
 
             if (player == null) return;
             player.LatestCheckpoint = transform.position;
+            player.GetComponentInChildren<LightGun>().ResetEnergy();
             levelManager.LevelUp();
             gameObject.SetActive(false);
         }

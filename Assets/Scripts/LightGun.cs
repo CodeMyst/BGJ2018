@@ -27,7 +27,7 @@ namespace BGJ2018
 
         private void Start ()
         {
-            energy = maxEnergy;
+            ResetEnergy();
         }
 
         private void Update ()
@@ -45,6 +45,12 @@ namespace BGJ2018
             transform.localEulerAngles = new Vector3 (0, AngleHelper.ClampAngle (transform.localEulerAngles.y, -30, 30), transform.localEulerAngles.z);
 
             HandleRay ();
+        }
+
+        // Sets energy to max
+        internal void ResetEnergy()
+        {
+            energy = maxEnergy;
         }
 
         private void HandleRay ()
