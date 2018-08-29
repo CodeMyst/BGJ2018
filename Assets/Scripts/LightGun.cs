@@ -7,7 +7,10 @@ namespace BGJ2018
 {
     public class LightGun : MonoBehaviour
     {
-        private Vector3 rotatePoint;
+        [SerializeField]
+        private Transform pivotPoint;
+        [SerializeField]
+        private float rotateRadius = 3f;
         [SerializeField]
         private Transform firePoint;
         [SerializeField]
@@ -48,6 +51,11 @@ namespace BGJ2018
             transform.LookAt (transform.position + lookDirection, Vector3.up);
 
             transform.localEulerAngles = new Vector3 (0, AngleHelper.ClampAngle (transform.localEulerAngles.y, -halfAngleExtent, halfAngleExtent), transform.localEulerAngles.z);
+
+            aimGuide.positionCount = 2;
+            aimGuide.SetPosition (0, firePoint.position);
+            aimGuide.SetPosition (1, -firePoint.forward * 1000 + transform.position);
+
 
             HandleRay ();
         }
