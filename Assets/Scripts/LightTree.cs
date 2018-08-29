@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using BGJ2018.Audio;
+using UnityEngine;
 
 namespace BGJ2018
 {
@@ -12,11 +13,13 @@ namespace BGJ2018
         [SerializeField] private Light light;
         [SerializeField] private MeshRenderer meshRenderer;
 
+        private SoundEffectSpawner soundEffectSpawner;
         private PlayerController playerInsideTrigger;
         private bool consumed;
 
         private void Start()
         {
+            soundEffectSpawner = GetComponent<SoundEffectSpawner>();
             ReplenishTree();
         }
 
@@ -41,6 +44,7 @@ namespace BGJ2018
         {
             light.enabled = false;
             meshRenderer.material = offMaterial;
+            soundEffectSpawner.InstantiateSoundEffect2D("ConsumeTree");
             consumed = true;
         }
 
