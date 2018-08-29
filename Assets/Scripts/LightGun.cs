@@ -16,6 +16,10 @@ namespace BGJ2018
         [SerializeField]
         private LineRenderer aimGuide;
         [SerializeField]
+        private LineRenderer lightRay;
+        [SerializeField]
+        private ParticleSystem shootingParticles;
+        [SerializeField]
         private Material aimGuideMaterial;
         [SerializeField]
         private Material aimGuideMaterialOn;
@@ -36,6 +40,8 @@ namespace BGJ2018
         {
             energy = maxEnergy;
             mouseCastLayer = LayerMask.GetMask("MouseCast");
+            lightRay.enabled = false;
+            shootingParticles.Pause ();
         }
 
         private void Update ()
@@ -56,6 +62,9 @@ namespace BGJ2018
             aimGuide.SetPosition (0, firePoint.position);
             aimGuide.SetPosition (1, -firePoint.forward * 1000 + transform.position);
 
+            lightRay.positionCount = 2;
+            lightRay.SetPosition (0, firePoint.position);
+            lightRay.SetPosition (1, -firePoint.forward * 1000 + transform.position);
 
             HandleRay ();
         }
@@ -88,6 +97,9 @@ namespace BGJ2018
         private IEnumerator ShootAtIlluminatable (IlluminatableObject i, float amountOfEnergy)
         {
             if (energy <= 0 || i.MaxEnergy) yield break;
+            lightRay.enabled = true;
+            shootingParticles.Play ();
+            aimGuide.enabled = false;
             float energyAdded = 0;
             do
             {
@@ -96,6 +108,9 @@ namespace BGJ2018
                 energy += fireRate;
                 yield return new WaitForEndOfFrame ();
             } while (energyAdded < amountOfEnergy && Input.GetMouseButton (0));
+            lightRay.enabled = false;
+            shootingParticles.Stop ();
+            aimGuide.enabled = true;
         }
     }
 }

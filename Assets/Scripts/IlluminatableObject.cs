@@ -23,6 +23,9 @@ namespace BGJ2018
         [SerializeField]
         private float maxLightIntensity = 3.5f;
 
+        /// <summary>
+        /// Is the light illuminated at all?
+        /// </summary>
         public bool Illuminated { get; protected set; }
 
         public UnityEvent OnIlluminated;
@@ -32,7 +35,10 @@ namespace BGJ2018
         public float EnergyRequired => energyRequired;
         private float energy;
 
-        public bool MaxEnergy => energy == energyRequired;
+        /// <summary>
+        /// Is the light illuminated maximally?
+        /// </summary>
+        public bool MaxEnergy => energy >= energyRequired;
 
         private void Start()
         {
