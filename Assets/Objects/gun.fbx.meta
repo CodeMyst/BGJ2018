@@ -1,85 +1,62 @@
 fileFormatVersion: 2
-guid: 2e7118da96639344793bc29f87ea0d77
+guid: 6eab92a3fb0002143ac8757943cd5032
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Armature
-    100002: Backup
-    100004: Bone.16
-    100006: Bone.16_end
-    100008: Bone.17
-    100010: //RootNode
-    100012: Global_CTRL
-    100014: Hair
-    100016: Head1
-    100018: Head2
-    100020: Head2_end
-    100022: Left_Foot
-    100024: Left_Foot_end
-    100026: Left_Hip
-    100028: Left_LowerArm
-    100030: Left_LowerArm_end
-    100032: Left_LowerLeg
-    100034: Left_Shoulder
-    100036: Left_UpperArm
-    100038: Left_UpperLeg
-    100040: Neck1
-    100042: Neck2
-    100044: Neck3
-    100046: Rigged
-    100048: Right_Foot
-    100050: Right_Foot_end
-    100052: Right_Hip
-    100054: Right_LowerLeg
-    100056: Right_Shoulder
-    100058: Right_UpperLeg
-    100060: Spine1
-    100062: Spine2
-    100064: Spine3
-    400000: Armature
-    400002: Backup
-    400004: Bone.16
-    400006: Bone.16_end
-    400008: Bone.17
-    400010: //RootNode
-    400012: Global_CTRL
-    400014: Hair
-    400016: Head1
-    400018: Head2
-    400020: Head2_end
-    400022: Left_Foot
-    400024: Left_Foot_end
-    400026: Left_Hip
-    400028: Left_LowerArm
-    400030: Left_LowerArm_end
-    400032: Left_LowerLeg
-    400034: Left_Shoulder
-    400036: Left_UpperArm
-    400038: Left_UpperLeg
-    400040: Neck1
-    400042: Neck2
-    400044: Neck3
-    400046: Rigged
-    400048: Right_Foot
-    400050: Right_Foot_end
-    400052: Right_Hip
-    400054: Right_LowerLeg
-    400056: Right_Shoulder
-    400058: Right_UpperLeg
-    400060: Spine1
-    400062: Spine2
-    400064: Spine3
-    2100000: No Name
-    2100002: Character
-    2300000: Backup
-    2300002: Hair
-    3300000: Backup
-    3300002: Hair
-    4300000: Hair
-    4300002: Rigged
-    4300004: Backup
-    9500000: //RootNode
-    13700000: Rigged
+    100000: EnergySphere
+    100002: Gun
+    100004: //RootNode
+    100006: Light
+    100008: Light.001
+    100010: Light.002
+    100012: Light.003
+    100014: Light.004
+    100016: Light.005
+    100018: Light.006
+    100020: Light.007
+    400000: EnergySphere
+    400002: Gun
+    400004: //RootNode
+    400006: Light
+    400008: Light.001
+    400010: Light.002
+    400012: Light.003
+    400014: Light.004
+    400016: Light.005
+    400018: Light.006
+    400020: Light.007
+    2100000: EmissiveLight
+    2100002: Gun
+    2300000: EnergySphere
+    2300002: Gun
+    2300004: Light
+    2300006: Light.001
+    2300008: Light.002
+    2300010: Light.003
+    2300012: Light.004
+    2300014: Light.005
+    2300016: Light.006
+    2300018: Light.007
+    3300000: EnergySphere
+    3300002: Gun
+    3300004: Light
+    3300006: Light.001
+    3300008: Light.002
+    3300010: Light.003
+    3300012: Light.004
+    3300014: Light.005
+    3300016: Light.006
+    3300018: Light.007
+    4300000: Light.007
+    4300002: Light.006
+    4300004: Light.005
+    4300006: Light.004
+    4300008: EnergySphere
+    4300010: Light.003
+    4300012: Light.002
+    4300014: Light.001
+    4300016: Light
+    4300018: Gun
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -111,7 +88,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -155,7 +132,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

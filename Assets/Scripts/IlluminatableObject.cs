@@ -34,8 +34,10 @@ namespace BGJ2018
 
         public bool MaxEnergy => energy == energyRequired;
 
-        private void Start ()
-            => r = illuminatable.GetComponent<Renderer> ();
+        private void Start()
+        {
+            r = illuminatable.GetComponent<Renderer>();
+        }
 
         public void AddEnergy (float energy)
         {
