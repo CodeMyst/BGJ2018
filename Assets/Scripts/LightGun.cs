@@ -18,6 +18,8 @@ namespace BGJ2018
         private Material aimGuideMaterialOn;
         [SerializeField]
         private float fireRate = 0.25f;
+        [SerializeField]
+        private float halfAngleExtent = 30;
 
         private Vector3 lookDirection;
 
@@ -25,9 +27,12 @@ namespace BGJ2018
         private float maxEnergy = 100f;
         private float energy;
 
+        private int mouseCastLayer;
+
         private void Start ()
         {
             energy = maxEnergy;
+            mouseCastLayer = LayerMask.GetMask("MouseCast");
         }
 
         private void Update ()
@@ -35,14 +40,14 @@ namespace BGJ2018
             Ray r = Camera.main.ScreenPointToRay (Input.mousePosition);
             RaycastHit hit;
             Vector3 hitpos = Vector3.zero;
-            if (Physics.Raycast (r, out hit))
+            if (Physics.Raycast (r, out hit, Mathf.Infinity, mouseCastLayer))
                 hitpos = hit.point;
 
             lookDirection = hitpos - transform.position;
             lookDirection.y = 0;
             transform.LookAt (transform.position + lookDirection, Vector3.up);
 
-            transform.localEulerAngles = new Vector3 (0, AngleHelper.ClampAngle (transform.localEulerAngles.y, -30, 30), transform.localEulerAngles.z);
+            transform.localEulerAngles = new Vector3 (0, AngleHelper.ClampAngle (transform.localEulerAngles.y, -halfAngleExtent, halfAngleExtent), transform.localEulerAngles.z);
 
             HandleRay ();
         }
