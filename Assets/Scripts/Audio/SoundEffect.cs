@@ -5,6 +5,7 @@ namespace BGJ2018.Audio
     [RequireComponent(typeof(AudioSource))]
     public class SoundEffect : MonoBehaviour
     {
+        [SerializeField] [Range(0, 1)] private float volumeScaleFor3D = -1; // Leave at default if not 3d audio.
         [SerializeField] private bool soundEffectIs3D;
 
         private PlayerController player;
@@ -71,7 +72,7 @@ namespace BGJ2018.Audio
                 return 0;
             }
 
-            return (1 - distance / range) * (player.volume / 100);
+            return (1 - distance / range) * (player.volume / 100) * (volumeScaleFor3D == -1 ? 1 : volumeScaleFor3D);
         }
 
         private float Get2DVolume()
