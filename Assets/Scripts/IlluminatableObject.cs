@@ -40,7 +40,7 @@ namespace BGJ2018
         /// </summary>
         public bool MaxEnergy => energy >= energyRequired;
 
-        private void Start()
+        protected virtual void Start()
         {
             r = illuminatable.GetComponent<Renderer>();
         }
@@ -80,7 +80,7 @@ namespace BGJ2018
         }
 
         // Not sure if this is everything that has to be done
-        internal void ResetEnergy()
+        internal virtual void ResetEnergy()
         {
             energy = 0;
             UpdateLight();
