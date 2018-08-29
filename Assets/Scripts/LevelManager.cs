@@ -47,6 +47,8 @@ namespace BGJ2018
 
             player.transform.position = player.LatestCheckpoint;
 
+            player.GetComponentInChildren<LightGun>().ResetEnergy();
+
             // Resets all the game object positions like they were in start
             for (var i = 0; i < levelToRestart.GameObjectsToReset.Count; i++)
             {
@@ -57,6 +59,11 @@ namespace BGJ2018
             {
                 illuminatable.ResetEnergy();
             }
+
+            foreach (var tree in levelToRestart.TreesToReset)
+            {
+                tree.ReplenishTree();
+            }
         }
     }
 
@@ -66,6 +73,7 @@ namespace BGJ2018
         [SerializeField] internal int LevelNumber;
         [SerializeField] internal List<Transform> GameObjectsToReset; // Resets the position of this game object if the player hits restart
         [SerializeField] internal List<IlluminatableObject> IlluminatablesToReset;
+        [SerializeField] internal List<LightTree> TreesToReset;
 
         internal List<Vector3> GameObjectStartPositions = new List<Vector3>();
 

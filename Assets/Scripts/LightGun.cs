@@ -38,10 +38,10 @@ namespace BGJ2018
 
         private void Start ()
         {
-            energy = maxEnergy;
             mouseCastLayer = LayerMask.GetMask("MouseCast");
             lightRay.enabled = false;
             shootingParticles.Pause ();
+            ResetEnergy();
         }
 
         private void Update ()
@@ -67,6 +67,12 @@ namespace BGJ2018
             lightRay.SetPosition (1, -firePoint.forward * 1000 + transform.position);
 
             HandleRay ();
+        }
+
+        // Sets energy to max
+        internal void ResetEnergy()
+        {
+            energy = maxEnergy;
         }
 
         private void HandleRay ()
