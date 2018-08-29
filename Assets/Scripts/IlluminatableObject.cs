@@ -56,7 +56,7 @@ namespace BGJ2018
         {
             if (energy > energyRequired) return;
 
-            this.energy += energyToAdd;
+            energy += energyToAdd;
 
             if (energy >= energyRequired)
             {
@@ -71,6 +71,13 @@ namespace BGJ2018
             float intensity = (maxLightIntensity * percentLit) / 100f;
             r.material.SetColor ("_EmissionColor", materialColor * intensity * 3.5f);
             light.intensity = intensity;
+        }
+
+        // Not sure if this is everything that has to be done
+        internal void ResetEnergy()
+        {
+            energy = 0;
+            UpdateLight();
         }
     }
 }

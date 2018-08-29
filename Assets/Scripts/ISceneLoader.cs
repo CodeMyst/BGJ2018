@@ -2,5 +2,4 @@
 {
     void LoadScene(int sceneIndex);
     void LoadNextScene();
-    void ReloadActiveScene();
 }
