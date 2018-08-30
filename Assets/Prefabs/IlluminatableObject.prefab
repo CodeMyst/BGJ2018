@@ -69,8 +69,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1012920461863166}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.71, y: 0.903, z: 10.464}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4306189335967632}
@@ -85,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1798527020950526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.3, z: 0}
+  m_LocalPosition: {x: 0, y: 0.2849999, z: 0}
   m_LocalScale: {x: 0.15, y: 2, z: 0.15}
   m_Children: []
   m_Father: {fileID: 4055059104791340}
@@ -98,7 +98,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1080277574860260}
   m_LocalRotation: {x: -0.0021217768, y: 0.00090929656, z: 0.0045235176, w: 0.9999871}
-  m_LocalPosition: {x: -0, y: 1.4150001, z: -0}
+  m_LocalPosition: {x: 0, y: 1.4, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 4055059104791340}
@@ -198,8 +198,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8217921, y: 2.1962807, z: 0.83134985}
-  m_Center: {x: 0.034527063, y: 0.6402818, z: -0.016368628}
+  m_Size: {x: 0.8217921, y: 2.3912003, z: 0.83134985}
+  m_Center: {x: 0.034527063, y: 1.2181822, z: -0.016368628}
 --- !u!108 &108848801677055820
 Light:
   m_ObjectHideFlags: 1
@@ -258,8 +258,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_MethodName: InstantiateSoundEffect2D
-        m_Mode: 5
+        m_MethodName: Open
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
