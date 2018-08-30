@@ -1575,6 +1575,31 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 120542835597866638, guid: 0cda7f5c0e721f143b0f2e284005b010,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 120984710263023908, guid: 0cda7f5c0e721f143b0f2e284005b010,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 120984710263023908, guid: 0cda7f5c0e721f143b0f2e284005b010,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 120984710263023908, guid: 0cda7f5c0e721f143b0f2e284005b010,
+        type: 2}
+      propertyPath: m_Parameters.generateLightingData
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 120542835597866638, guid: 0cda7f5c0e721f143b0f2e284005b010,
+        type: 2}
+      propertyPath: m_Parameters.generateLightingData
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0cda7f5c0e721f143b0f2e284005b010, type: 2}
   m_IsPrefabParent: 0
@@ -1748,7 +1773,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh29682
+  m_Name: pb_Mesh14206
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -7374,7 +7399,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 2
+  m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -7626,8 +7651,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.52415895, y: 1.6981885, z: 0.4258747}
-  m_Center: {x: 0.02480483, y: 0.8893279, z: -0.008939743}
+  m_Size: {x: 0.8217921, y: 2.1962807, z: 0.83134985}
+  m_Center: {x: 0.034527063, y: 0.6402818, z: -0.016368628}
 --- !u!4 &1986276034
 Transform:
   m_ObjectHideFlags: 0
