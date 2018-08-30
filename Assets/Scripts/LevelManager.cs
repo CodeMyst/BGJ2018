@@ -11,23 +11,19 @@ namespace BGJ2018
         [SerializeField] private KeyCode reloadKey = KeyCode.R;
         [SerializeField] private List<Level> levels;
 
-        private SceneLoader sceneLoader;
-
         private void Start()
         {
             foreach (var level in levels)
             {
                 level.SetGameObjectStartPositions();
             }
-
-            sceneLoader = FindObjectOfType<SceneLoader>();
         }
 
         private void Update()
         {
             if (Input.GetKeyDown(reloadKey))
             {
-                sceneLoader.ResetLevel(this);
+                SceneLoader.Instance.ResetLevel(this);
             }
         }
 
