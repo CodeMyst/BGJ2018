@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23623795382933102}
   - component: {fileID: 65819359538578578}
   - component: {fileID: 114435027116023642}
+  - component: {fileID: 114792173234802356}
   m_Layer: 0
   m_Name: Pressure Plate
   m_TagString: Untagged
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1636388021089608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.05, y: 0.06, z: 5.43}
+  m_LocalPosition: {x: 1.96, y: 0.06, z: -4.43}
   m_LocalScale: {x: 1, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -110,9 +111,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minY: -0.043
   maxY: 0.06
-  speed: 0.005
+  speed: 0.01
   OnStepped:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114792173234802356}
+        m_MethodName: InstantiateSoundEffect2D
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Enter
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114792173234802356
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1636388021089608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23907687485f65643aafc47d54af30a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffectPrefab2D: {fileID: 1841668711546712, guid: d840f53bcc471ac4985a1c519d2a2371,
+    type: 2}
+  soundEffectPrefab3D: {fileID: 1841668711546712, guid: 8b86e6a253a365f459398a429d3fc49f,
+    type: 2}
+  soundEffects:
+  - Name: Enter
+    Clip: {fileID: 8300000, guid: 03aa54750566f1b44bbbbdd43db2b450, type: 3}
+    Volume: 0.5
+    SpawnPosition: {x: 0, y: 0, z: 0}

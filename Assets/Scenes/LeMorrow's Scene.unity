@@ -1466,6 +1466,48 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: b4584636940d78b4891163624ac30e8c, type: 3}
     Volume: 0.5
     SpawnPosition: {x: 0, y: 0, z: 0}
+--- !u!1001 &808424280
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4015004609734902, guid: 714d1dc9626b1514992cb6ead9102228, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015004609734902, guid: 714d1dc9626b1514992cb6ead9102228, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015004609734902, guid: 714d1dc9626b1514992cb6ead9102228, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -4.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015004609734902, guid: 714d1dc9626b1514992cb6ead9102228, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015004609734902, guid: 714d1dc9626b1514992cb6ead9102228, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015004609734902, guid: 714d1dc9626b1514992cb6ead9102228, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015004609734902, guid: 714d1dc9626b1514992cb6ead9102228, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015004609734902, guid: 714d1dc9626b1514992cb6ead9102228, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 714d1dc9626b1514992cb6ead9102228, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &947119880
 GameObject:
   m_ObjectHideFlags: 0
