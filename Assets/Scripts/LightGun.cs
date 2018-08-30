@@ -49,6 +49,8 @@ namespace BGJ2018
 
         private void Update ()
         {
+            if (Time.timeScale == 0) return;
+
             Ray r = Camera.main.ScreenPointToRay (Input.mousePosition);
             RaycastHit hit;
             Vector3 hitpos = Vector3.zero;

@@ -22,6 +22,7 @@ namespace BGJ2018
 
         private void Update ()
         {
+            if (Time.timeScale == 0) return;
             if (currentDialogue == null) return;
 
             if (Input.GetKeyDown (KeyCode.Space))
