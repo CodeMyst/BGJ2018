@@ -1,5 +1,4 @@
 using UnityEngine;
-
 using BGJ2018.Helpers;
 using System.Collections;
 
@@ -7,36 +6,24 @@ namespace BGJ2018
 {
     public class LightGun : MonoBehaviour
     {
-        [SerializeField]
-        private Transform pivotPoint;
-        [SerializeField]
-        private float rotateRadius = 3f;
-        [SerializeField]
-        private Transform firePoint;
-        [SerializeField]
-        private LineRenderer aimGuide;
-        [SerializeField]
-        private LineRenderer lightRay;
-        [SerializeField]
-        private ParticleSystem shootingParticles;
-        [SerializeField]
-        private Material aimGuideMaterial;
-        [SerializeField]
-        private Material aimGuideMaterialOn;
-        [SerializeField]
-        private float fireRate = 0.25f;
-        [SerializeField]
-        private float halfAngleExtent = 30;
+        [SerializeField] private AudioSource rayActiveSound;
+        [SerializeField] private Transform pivotPoint;
+        [SerializeField] private float rotateRadius = 3f;
+        [SerializeField] private Transform firePoint;
+        [SerializeField] private LineRenderer aimGuide;
+        [SerializeField] private LineRenderer lightRay;
+        [SerializeField] private ParticleSystem shootingParticles;
+        [SerializeField] private Material aimGuideMaterial;
+        [SerializeField] private Material aimGuideMaterialOn;
+        [SerializeField] private float fireRate = 0.25f;
+        [SerializeField] private float halfAngleExtent = 30;
+        [SerializeField] private float maxEnergy = 100f;
 
-        private Vector3 lookDirection;
-
-        [SerializeField]
-        private float maxEnergy = 100f;
         private float energy;
-
         public float Energy => energy;
         public float MaxEnergy => maxEnergy;
 
+        private Vector3 lookDirection;
         private int mouseCastLayer;
 
         private void Start ()
@@ -110,6 +97,7 @@ namespace BGJ2018
             if (energy <= 0 || i.MaxEnergy) yield break;
             lightRay.enabled = true;
             shootingParticles.Play ();
+            rayActiveSound.Play();
             aimGuide.enabled = false;
             do
             {
@@ -119,6 +107,7 @@ namespace BGJ2018
             } while (!i.MaxEnergy && Input.GetMouseButton (0));
             lightRay.enabled = false;
             shootingParticles.Stop ();
+            rayActiveSound.Stop();
             aimGuide.enabled = true;
         }
     }
