@@ -1,15 +1,18 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace BGJ2018.Audio
 {
-    [RequireComponent(typeof(AudioSource))]
     public class MusicPlayer : MonoBehaviour
     {
         internal static MusicPlayer Instance { get; private set; }
 
-        [SerializeField] private AudioClip clip;
+        [SerializeField] private AudioSource menuSource;
+        [SerializeField] private AudioSource choirSource;
 
-        private AudioSource audioSource;
+        [SerializeField] private AudioSource mainSource;
+        [SerializeField] [Range(0, 1)] private float mainSourceMaxVolume;
+        [SerializeField] private float mainSourceFadeSpeed;
 
         private void Awake()
         {
@@ -18,9 +21,25 @@ namespace BGJ2018.Audio
 
         private void Start()
         {
-            audioSource = GetComponent<AudioSource>();
-            audioSource.clip = clip;
-            audioSource.Play();
+            menuSource.Play();
+        }
+
+        // Called by the start game button
+        public void StartChoirAndMain()
+        {
+            choirSource.Play();
+            StartCoroutine(MainSourceFadeIn());
+        }
+
+        private IEnumerator MainSourceFadeIn()
+        {
+            mainSource.volume = 0;
+            mainSource.Play();
+            while (mainSource.volume < mainSourceMaxVolume)
+            {
+                mainSource.volume += mainSourceFadeSpeed / 1000;
+                yield return new WaitForEndOfFrame();
+            }
         }
 
         private void SingletonCheck()
