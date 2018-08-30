@@ -34,6 +34,9 @@ namespace BGJ2018
         private float maxEnergy = 100f;
         private float energy;
 
+        public float Energy => energy;
+        public float MaxEnergy => maxEnergy;
+
         private int mouseCastLayer;
 
         private void Start ()
@@ -88,7 +91,7 @@ namespace BGJ2018
                     aimGuide.material = aimGuideMaterialOn; 
 
                     if (Input.GetMouseButtonDown (0))
-                        StartCoroutine (ShootAtIlluminatable (i, 5f));
+                        StartCoroutine (ShootAtIlluminatable (i));
                 }
                 else
                     aimGuide.material = aimGuideMaterial;
@@ -100,20 +103,18 @@ namespace BGJ2018
             }
         }
 
-        private IEnumerator ShootAtIlluminatable (IlluminatableObject i, float amountOfEnergy)
+        private IEnumerator ShootAtIlluminatable (IlluminatableObject i)
         {
             if (energy <= 0 || i.MaxEnergy) yield break;
             lightRay.enabled = true;
             shootingParticles.Play ();
             aimGuide.enabled = false;
-            float energyAdded = 0;
             do
             {
                 energy -= fireRate;
                 i.AddEnergy (fireRate);
-                energy += fireRate;
                 yield return new WaitForEndOfFrame ();
-            } while (energyAdded < amountOfEnergy && Input.GetMouseButton (0));
+            } while (!i.MaxEnergy && Input.GetMouseButton (0));
             lightRay.enabled = false;
             shootingParticles.Stop ();
             aimGuide.enabled = true;
