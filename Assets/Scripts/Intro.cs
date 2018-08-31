@@ -24,13 +24,13 @@ namespace BGJ2018
         {
             foreach (string p in intro)
             {
-                textUI.SetText ("");
+                textUI.text = "";
 
                 int index = 0;
 
                 do
                 {
-                    textUI.SetText (textUI.text + p [index]);
+                    textUI.text += p [index];
                     index++;
                     yield return new WaitForSeconds (characterTime);
                 } while (index + 1 <= p.Length);
