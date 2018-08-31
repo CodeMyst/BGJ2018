@@ -60,6 +60,11 @@ namespace BGJ2018
             {
                 tree.ReplenishTree();
             }
+
+            foreach (var door in levelToRestart.DoorsToReset)
+            {
+                door.Reset ();
+            }
         }
     }
 
@@ -70,6 +75,7 @@ namespace BGJ2018
         [SerializeField] internal List<Transform> GameObjectsToReset; // Resets the position of this game object if the player hits restart
         [SerializeField] internal List<IlluminatableObject> IlluminatablesToReset;
         [SerializeField] internal List<LightTree> TreesToReset;
+        [SerializeField] internal List<Door> DoorsToReset;
 
         internal List<Vector3> GameObjectStartPositions = new List<Vector3>();
 
