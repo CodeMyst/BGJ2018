@@ -27,6 +27,12 @@ public class Door : MonoBehaviour
         }
     }
 
+    internal void Reset ()
+    {
+        open = false;
+        transform.position = startPosition;
+    }
+
     public void Open()
     {
         open = true;
