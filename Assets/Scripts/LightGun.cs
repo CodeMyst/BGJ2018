@@ -104,7 +104,7 @@ namespace BGJ2018
                 energy -= fireRate;
                 i.AddEnergy (fireRate);
                 yield return new WaitForEndOfFrame ();
-            } while (!i.MaxEnergy && Input.GetMouseButton (0));
+            } while (!i.MaxEnergy && Input.GetMouseButton (0) && energy > 0);
             lightRay.enabled = false;
             shootingParticles.Stop ();
             rayActiveSound.Stop();
