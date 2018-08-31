@@ -22,6 +22,9 @@ namespace BGJ2018
 
         private Vector3 input;
 
+        [SerializeField] private LightGun gun;
+        public LightGun Gun => gun;
+
         private void Start()
         {
             rb = GetComponent<Rigidbody>();

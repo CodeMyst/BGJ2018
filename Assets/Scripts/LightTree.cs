@@ -44,8 +44,9 @@ namespace BGJ2018
         {
             light.enabled = false;
             meshRenderer.material = offMaterial;
-            soundEffectSpawner.InstantiateSoundEffect2D("ConsumeTree");
+            playerInsideTrigger.Gun.ResetEnergy ();
             consumed = true;
+            soundEffectSpawner.InstantiateSoundEffect2D("ConsumeTree");
         }
 
         private void OnTriggerEnter(Collider other)
