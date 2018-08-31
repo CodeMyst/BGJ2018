@@ -412,7 +412,7 @@ Transform:
   m_GameObject: {fileID: 205267480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.19, z: 0}
-  m_LocalScale: {x: 10, y: 1, z: 10}
+  m_LocalScale: {x: 15.997886, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -2523,7 +2523,7 @@ MonoBehaviour:
   offMaterial: {fileID: 2100000, guid: e3105a446d614bb40ab0014ee4ba7e8c, type: 2}
   onMaterial: {fileID: 2100000, guid: 9f8c572c3f9aec143af6cb921c137973, type: 2}
   light: {fileID: 788115139}
-  materialColor: {r: 0, g: 0, b: 0, a: 0}
+  materialColor: {r: 0, g: 0.2235, b: 0.7490196, a: 1}
   illuminatable: {fileID: 788115137}
   maxLightIntensity: 3.5
   OnIlluminated:
@@ -3098,7 +3098,7 @@ MonoBehaviour:
   offMaterial: {fileID: 2100000, guid: e3105a446d614bb40ab0014ee4ba7e8c, type: 2}
   onMaterial: {fileID: 2100000, guid: 9f8c572c3f9aec143af6cb921c137973, type: 2}
   light: {fileID: 1032354299}
-  materialColor: {r: 0, g: 0, b: 0, a: 0}
+  materialColor: {r: 0, g: 0.2235, b: 0.7490196, a: 1}
   illuminatable: {fileID: 1032354297}
   maxLightIntensity: 3.5
   OnIlluminated:
@@ -3153,7 +3153,7 @@ MonoBehaviour:
   offMaterial: {fileID: 2100000, guid: e3105a446d614bb40ab0014ee4ba7e8c, type: 2}
   onMaterial: {fileID: 2100000, guid: 9f8c572c3f9aec143af6cb921c137973, type: 2}
   light: {fileID: 2131061868}
-  materialColor: {r: 0, g: 0, b: 0, a: 0}
+  materialColor: {r: 0, g: 0.2235, b: 0.7490196, a: 1}
   illuminatable: {fileID: 2131061866}
   maxLightIntensity: 3.5
   OnIlluminated:
@@ -3164,7 +3164,6 @@ MonoBehaviour:
   energyRequired: 20
   requiredObjects:
   - {fileID: 2252577}
-  - {fileID: 1671272197}
   OnAllIlluminated:
     m_PersistentCalls:
       m_Calls:
