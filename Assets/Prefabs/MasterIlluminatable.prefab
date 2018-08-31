@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4645704870594842}
   - component: {fileID: 65565990226689870}
   - component: {fileID: 114587478356092270}
+  - component: {fileID: 114306975712061664}
   m_Layer: 0
   m_Name: MasterIlluminatable
   m_TagString: Untagged
@@ -328,6 +329,26 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114306975712061664
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1362947075653644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23907687485f65643aafc47d54af30a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffectPrefab2D: {fileID: 1841668711546712, guid: d840f53bcc471ac4985a1c519d2a2371,
+    type: 2}
+  soundEffectPrefab3D: {fileID: 1841668711546712, guid: 8b86e6a253a365f459398a429d3fc49f,
+    type: 2}
+  soundEffects:
+  - Name: LightbulbDing
+    Clip: {fileID: 8300000, guid: b4584636940d78b4891163624ac30e8c, type: 3}
+    Volume: 0.5
+    SpawnPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &114587478356092270
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -348,7 +369,18 @@ MonoBehaviour:
   maxLightIntensity: 3.5
   OnIlluminated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114306975712061664}
+        m_MethodName: InstantiateSoundEffect2D
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: LightbulbDing
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   energyRequired: 20
