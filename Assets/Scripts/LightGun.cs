@@ -58,6 +58,9 @@ namespace BGJ2018
             lightRay.SetPosition (0, firePoint.position);
             lightRay.SetPosition (1, -firePoint.forward * 1000 + transform.position);
 
+            if (Input.GetMouseButtonDown (0))
+                StartCoroutine (Shoot ());
+
             HandleRay ();
         }
 
@@ -66,6 +69,8 @@ namespace BGJ2018
         {
             energy = maxEnergy;
         }
+
+        private IlluminatableObject target;
 
         private void HandleRay ()
         {
@@ -77,13 +82,14 @@ namespace BGJ2018
                 IlluminatableObject i = hit.transform.gameObject.GetComponent<IlluminatableObject> ();
                 if (i != null && Vector3.Angle(transform.forward, lookDirection) < 1)
                 {
+                    target = i;
                     aimGuide.material = aimGuideMaterialOn; 
-
-                    if (Input.GetMouseButtonDown (0))
-                        StartCoroutine (ShootAtIlluminatable (i));
                 }
                 else
+                {
+                    target = null;
                     aimGuide.material = aimGuideMaterial;
+                }
             }
             else
             {
@@ -92,9 +98,9 @@ namespace BGJ2018
             }
         }
 
-        private IEnumerator ShootAtIlluminatable (IlluminatableObject i)
+        private IEnumerator Shoot ()
         {
-            if (energy <= 0 || i.MaxEnergy) yield break;
+            if (energy <= 0) yield break;
             lightRay.enabled = true;
             shootingParticles.Play ();
             rayActiveSound.Play();
@@ -102,9 +108,15 @@ namespace BGJ2018
             do
             {
                 energy -= fireRate;
-                i.AddEnergy (fireRate);
+                if (target != null)
+                {
+                    if (target.MaxEnergy == false)
+                    {
+                        target.AddEnergy (fireRate);
+                    }
+                }
                 yield return new WaitForEndOfFrame ();
-            } while (!i.MaxEnergy && Input.GetMouseButton (0));
+            } while (Input.GetMouseButton (0) && energy > 0);
             lightRay.enabled = false;
             shootingParticles.Stop ();
             rayActiveSound.Stop();
