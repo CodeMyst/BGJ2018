@@ -35,7 +35,7 @@ namespace BGJ2018
             OnAllIlluminated?.Invoke ();
         }
 
-        internal override void ResetEnergy ()
+        public override void ResetEnergy ()
         {
             base.ResetEnergy ();
             foreach (var obj in requiredObjects)

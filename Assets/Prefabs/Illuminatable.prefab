@@ -115,7 +115,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1286965725379760}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.17, y: 1.22, z: 3.42}
+  m_LocalPosition: {x: 6.56, y: 1.22, z: -2.086}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4774754090817230}
@@ -363,7 +363,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  energyRequired: 20
+  energyRequired: 40
 --- !u!114 &114923336148349144
 MonoBehaviour:
   m_ObjectHideFlags: 1

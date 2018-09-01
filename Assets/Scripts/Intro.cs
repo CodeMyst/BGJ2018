@@ -6,39 +6,87 @@ namespace BGJ2018
 {
     public class Intro : MonoBehaviour
     {
-        [SerializeField]
-        [Multiline]
-        private string [] intro;
+        [SerializeField] [TextArea(1,5)] private string [] intro;
+        [SerializeField] private TextMeshProUGUI textUI;
 
+        private int paragraphIndex;
         private float characterTime = 0.025f;
-        private float paragraphTime = 3f;
-        [SerializeField]
-        private TextMeshProUGUI textUI;
+        private Coroutine writingCoroutine;
 
         private void Start ()
         {
-            StartCoroutine (DisplayIntro ());
+            writingCoroutine = StartCoroutine(WriteParagraph(intro[paragraphIndex]));
         }
 
+        private void Update()
+        {
+            var pressedSkipButton = Input.GetMouseButtonDown(0) 
+                                || Input.GetKeyDown(KeyCode.Space)
+                                || Input.GetKeyDown(KeyCode.E);
+
+            if (!pressedSkipButton) return;
+
+            if (paragraphIndex > intro.Length -1)
+            {
+                if (SceneLoader.Instance.GetActiveSceneIndex() == 1)
+                {
+                    SceneLoader.Instance.LoadNextScene();
+                    return;
+                }
+
+                if (SceneLoader.Instance.GetActiveSceneIndex() == 3)
+                {
+                    Application.Quit();
+                    return;
+                }
+            }
+
+            if (writingCoroutine == null)
+            {
+                writingCoroutine = StartCoroutine(WriteParagraph(intro[paragraphIndex]));
+                pressedSkipButton = false;
+            }
+            else
+            {
+                StopCoroutine(writingCoroutine);
+                textUI.text = intro[paragraphIndex];
+                writingCoroutine = null;
+                pressedSkipButton = false;
+                paragraphIndex++;
+            }
+        }
+
+        private IEnumerator WriteParagraph(string paragraph)
+        {
+            textUI.text = "";
+            int charIndex = 0;
+
+            do
+            {
+                textUI.text += paragraph[charIndex];
+                charIndex++;
+                yield return new WaitForSeconds(characterTime);
+            }
+            while (charIndex + 1 <= paragraph.Length);
+
+            paragraphIndex++;
+            writingCoroutine = null;
+            //yield return new WaitUntil(() => pressedSkipButton);
+        }
+
+        /*
         private IEnumerator DisplayIntro ()
         {
             foreach (string p in intro)
             {
-                textUI.text = "";
 
-                int index = 0;
+                int charIndex = 0;
 
-                do
-                {
-                    textUI.text += p [index];
-                    index++;
-                    yield return new WaitForSeconds (characterTime);
-                } while (index + 1 <= p.Length);
-
-                yield return new WaitForSeconds (paragraphTime);
+                
+                //yield return new WaitForSeconds (paragraphTime);
             }
 
-            FindObjectOfType<SceneLoader> ().LoadNextScene ();
         }
+        */
     }
 }

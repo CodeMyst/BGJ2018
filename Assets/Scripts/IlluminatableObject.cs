@@ -80,7 +80,7 @@ namespace BGJ2018
         }
 
         // Not sure if this is everything that has to be done
-        internal virtual void ResetEnergy()
+        public virtual void ResetEnergy()
         {
             energy = 0;
             UpdateLight();

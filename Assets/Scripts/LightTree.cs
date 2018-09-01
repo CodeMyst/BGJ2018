@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace BGJ2018
 {
+    [RequireComponent(typeof(SoundEffectSpawner))]
     public class LightTree : MonoBehaviour
     {
         [SerializeField] private KeyCode consumeKey = KeyCode.E;

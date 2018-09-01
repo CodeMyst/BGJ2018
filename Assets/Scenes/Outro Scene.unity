@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 973096010}
   - component: {fileID: 973096009}
   m_Layer: 0
-  m_Name: IntroSequence
+  m_Name: OutroSequence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -434,17 +434,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   intro:
-  - Hello.
-  - I am... it doesn't matter who I am. What matters is who you are.
-  - I should start by explaining what happened, and what is going on.
-  - This all may seem confusing to you, since you... well... you don't remember anything.
-  - Today is 1st of Harvest Moon, year 3548.
-  - And you are one of the few ones that survived THE BLACKOUT.
-  - You see, this world is powered by light. Without it, there's nothing.
-  - There was a blackout, the event that killed everything. And you miraculously survived.
-  - Your one and only task right now is to fix this. You have to risk even your life
-    to save everyone, and everything.
-  - Goodbye, and good luck.
+  - You saved the world!
+  - '...'
+  - .. Or something ...
+  - Truth be told, the story isn't really completed.
+  - Sorry about that!
+  - 'If we would''ve had more time, our three primary goals would''ve been:'
+  - '#1 Harder & more puzzles.'
+  - '#2 Better story'
+  - '#3 More optimization and polish (wonky aiming, wonky collisions, etc)'
+  - Thanks for playing our game & participating in the game jam!
+  - We learned many things in the process and we hope you did as well. We'll see you
+    on Discord! discord.gg/brackeys
+  - '3D Models: Yilian
+
+    Music & Sound: LeMorrow
+
+    Story: CodeMyst
+
+
+    Programming: All of us :)'
+  - Press any key to exit the game.
   textUI: {fileID: 262157468}
 --- !u!4 &973096010
 Transform:

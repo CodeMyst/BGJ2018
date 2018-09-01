@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Door : MonoBehaviour
 {
@@ -27,7 +25,7 @@ public class Door : MonoBehaviour
         }
     }
 
-    internal void Reset ()
+    public void Reset ()
     {
         open = false;
         transform.position = startPosition;

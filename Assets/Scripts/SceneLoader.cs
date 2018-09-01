@@ -73,6 +73,11 @@ namespace BGJ2018
             ongoingCoroutine = null;
         }
 
+        public int GetActiveSceneIndex()
+        {
+            return SceneManager.GetActiveScene().buildIndex;
+        }
+
         public void LoadScene(int sceneIndex)
         {
             if (ongoingCoroutine != null) return;
